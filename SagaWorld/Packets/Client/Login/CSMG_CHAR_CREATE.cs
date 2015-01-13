@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 
 using SagaLib;
-using SagaLogin;
-using SagaLogin.Network.Client;
+using SagaWorld;
+using SagaWorld.Network.Client;
 
 using SagaDB.Actor;
 
-namespace SagaLogin.Packets.Client
+namespace SagaWorld.Packets.Client
 {
     public class CSMG_CHAR_CREATE : Packet
     {
@@ -91,12 +91,12 @@ namespace SagaLogin.Packets.Client
 
         public override SagaLib.Packet New()
         {
-            return (SagaLib.Packet)new SagaLogin.Packets.Client.CSMG_CHAR_CREATE();
+            return (SagaLib.Packet)new SagaWorld.Packets.Client.CSMG_CHAR_CREATE();
         }
 
         public override void Parse(SagaLib.Client client)
         {
-            ((LoginClient)(client)).OnCharCreate(this);
+            ((WorldClient)(client)).OnCharCreate(this);
         }
 
     }

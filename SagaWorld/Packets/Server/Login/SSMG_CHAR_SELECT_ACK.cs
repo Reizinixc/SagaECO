@@ -4,7 +4,7 @@ using System.Text;
 
 using SagaLib;
 
-namespace SagaLogin.Packets.Server
+namespace SagaWorld.Packets.Server
 {
     public class SSMG_CHAR_SELECT_ACK : Packet
     {

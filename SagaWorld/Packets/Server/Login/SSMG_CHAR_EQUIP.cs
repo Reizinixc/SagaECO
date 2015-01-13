@@ -8,7 +8,7 @@ using SagaDB;
 using SagaDB.Actor;
 using SagaDB.Item;
 
-namespace SagaLogin.Packets.Server
+namespace SagaWorld.Packets.Server
 {
     public class SSMG_CHAR_EQUIP : Packet
     {

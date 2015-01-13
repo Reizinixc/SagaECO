@@ -7,7 +7,7 @@ using SagaLib;
 
 using SagaDB.Actor;
 
-namespace SagaLogin.Packets.Server
+namespace SagaWorld.Packets.Server
 {
     public class SSMG_CHAR_DATA : Packet
     {

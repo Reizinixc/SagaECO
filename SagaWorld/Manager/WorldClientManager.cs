@@ -9,17 +9,17 @@ using System.Net.Sockets;
 using System.Threading;
 
 using SagaLib;
-using SagaLogin;
-using SagaLogin.Network.Client;
+using SagaWorld;
+using SagaWorld.Network.Client;
 
 
-namespace SagaLogin.Manager
+namespace SagaWorld.Manager
 {
-    public sealed class LoginClientManager : ClientManager
+    public sealed class WorldClientManager : ClientManager
     {
-        List<LoginClient> clients;
+        List<WorldClient> clients;
         public Thread check;
-        LoginClientManager()
+        WorldClientManager()
         {
             /*
             this.clients = new Dictionary<uint, GatewayClient>();
@@ -34,14 +34,18 @@ namespace SagaLogin.Manager
 
             
             */
-            this.clients = new List<LoginClient>();
+            this.clients = new List<WorldClient>();
             this.commandTable = new Dictionary<ushort, Packet>();
 
             this.commandTable.Add(0x0001, new Packets.Client.CSMG_SEND_VERSION());
             this.commandTable.Add(0x000A, new Packets.Client.CSMG_PING());
             this.commandTable.Add(0x001F, new Packets.Client.CSMG_LOGIN());
-            this.commandTable.Add(0x0031, new Packets.Client.CSMG_REQUEST_MAP_SERVER());
-            //this.commandTable.Add(0x015F, new Packets.Client.CSMG_SEND_GUID());
+            this.commandTable.Add(0x002A, new Packets.Client.CSMG_CHAR_STATUS());
+            this.commandTable.Add(0x0032, new Packets.Client.CSMG_REQUEST_MAP_SERVER());
+            this.commandTable.Add(0x00A0, new Packets.Client.CSMG_CHAR_CREATE());
+            this.commandTable.Add(0x00A5, new Packets.Client.CSMG_CHAR_DELETE());
+            this.commandTable.Add(0x00A7, new Packets.Client.CSMG_CHAR_SELECT());
+            //this.commandTable.Add(0x00C9, new Packets.Client.WISPER());
 
 
             this.waitressQueue = new AutoResetEvent(false);
@@ -59,7 +63,7 @@ namespace SagaLogin.Manager
 #endif
         }
 
-        public static LoginClientManager Instance
+        public static WorldClientManager Instance
         {
             get
             {
@@ -75,7 +79,7 @@ namespace SagaLogin.Manager
             {
             }
 
-            internal static readonly LoginClientManager instance = new LoginClientManager();
+            internal static readonly WorldClientManager instance = new WorldClientManager();
         }
 
 
@@ -89,14 +93,14 @@ namespace SagaLogin.Manager
                 Socket sock = listener.AcceptSocket();
                 string ip = sock.RemoteEndPoint.ToString().Substring(0, sock.RemoteEndPoint.ToString().IndexOf(':'));
                 Logger.ShowInfo("New client from: " + sock.RemoteEndPoint.ToString(), null);
-                LoginClient client = new LoginClient(sock, this.commandTable);
+                WorldClient client = new WorldClient(sock, this.commandTable);
                 clients.Add(client);
             }
         }
 
         public override void OnClientDisconnect(Client client_t)
         {
-            clients.Remove((LoginClient)client_t);
+            clients.Remove((WorldClient)client_t);
         }
 
     }

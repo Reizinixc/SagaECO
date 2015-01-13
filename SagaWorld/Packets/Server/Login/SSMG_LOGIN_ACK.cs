@@ -4,7 +4,7 @@ using System.Text;
 
 using SagaLib;
 
-namespace SagaLogin.Packets.Server
+namespace SagaWorld.Packets.Server
 {
     public class SSMG_LOGIN_ACK : Packet
     {
@@ -72,7 +72,7 @@ namespace SagaLogin.Packets.Server
         }
         
         /// <summary>
-        /// ¥²¥¹¥ÈIDÆÚÏŞ¡¡(1970ÄEÔÂ1ÈÕ0•r0·Ö0ÃE«¤é¤ÎÃEı£©08/01/11¤è¤E
+        /// ¥²¥¹¥ÈIDÆÚÏŞ¡¡(1970ÄEÔÂ1ÈÕ0•r0·Ö0ÃE«¤é¤ÎÃE?£©08/01/11¤è¤E
         /// End time of trial(second count since 1st Jan. 1970)
         /// </summary>
         public uint TestEndTime
