@@ -1,13 +1,14 @@
 SagaECO
 =======
 
-!! THIS IS DEV_1.0 Branch Not Master !!
-!! IF YOU GIT AND GOT BUG... DONT BLAME ME BECAUSE IT'S DEV VERSION !!
+!! THIS IS LINUX DEV Branch Not Master Branch!!
+
+!! IF YOU GIT AND GOT BUG... DONT BLAME ME BECAUSE IT'S LINUX DEV VERSION !!
+
 
 This Server file is Emil Chronicle Online and Need Some coder to help to fix this.
-This Project is C#
-
-I'm Upload this for need someone make the code.
+This Project is C# and Change to MONO Compiler 
+Hope It work
 
 (SegaMap can't compile because...
 Error	1	Source file 'Network\Client\MapClient.Item.cs' could not be found	SagaECO\SagaMap\CSC	SagaMap
