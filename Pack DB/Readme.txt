@@ -7,5 +7,4 @@ To making DB.lpk is
 #Note
 I just google and found this tool so... Enjoy :)
 
-
 Karorogunso @ DL-Softs
