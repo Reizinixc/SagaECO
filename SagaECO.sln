@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{FCFB805F-0F37-4F43-9BF8-7FA82CE098AB}"
 EndProject
@@ -59,5 +59,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F0C18487-5FBB-43BD-B175-5F8B83B925DE} = {FCFB805F-0F37-4F43-9BF8-7FA82CE098AB}
+	EndGlobalSection
+	GlobalSection(CodealikeProperties) = postSolution
+		SolutionGuid = cb6b2c9c-a69a-4eb5-b10f-907fce1a75d6
 	EndGlobalSection
 EndGlobal
